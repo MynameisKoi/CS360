@@ -127,6 +127,17 @@ class Matrix{
         }
     }
 
+    // operator[] returns the element of the matrix
+    int operator[](int i){
+        int element[row*column];
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < column; j++) {
+                element[i*column+j] = s[i][j];
+            }
+        }
+        return element[i];
+    }
+
     void print(){
         for (int i = 0; i < row; i++) {
             for (int j = 0; j < column; j++) {
@@ -143,6 +154,11 @@ int main(){
     Matrix mat2("(9,8,7),(6,5,4),(3,2,1)");
     Matrix mat3("(4,9),(5,7),(6,3)");
     Matrix mat4("(2,5,8),(3,7,1)");
+    // access the elements of the matrix
+    cout << "mat1[2][3] = " << mat1[5] << endl;
+    cout << "mat2[1][1] = " << mat2[0] << endl;
+    cout << "mat3[3][2] = " << mat3[5] << endl;
+    cout << "mat4[2][2] = " << mat4[4] << endl;
     cout << "Print matrix mat1: " << endl;
     mat1.print();
     cout << "Print matrix mat2: " << endl;
